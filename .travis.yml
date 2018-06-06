@@ -11,10 +11,11 @@ smalltalk:
 env:
   matrix:
     - JOB=test TYPE=System ARCHETYPE=book OUTPUT=html
+    - JOB=test TYPE=System ARCHETYPE=book OUTPUT=pdf
 
 install:
     # Pillar installation
-    - git clone https://github.com/pillar-markup/pillar.git .pillar -b dev-7  # Clone pillar
+    - git clone https://github.com/samakhov/pillar.git .pillar -b merge/archetypes # Clone pillar
     - cd .pillar && ./scripts/build.sh && cd ..
 
 script:
