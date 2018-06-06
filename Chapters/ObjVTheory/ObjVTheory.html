@@ -1,39 +1,898 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>A simple reflective object kernel</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Highlight js -->
-    <link rel="stylesheet" href="_support/html/highlightjs/styles/default.css">
-    <link rel="stylesheet" href="_support/html/css/highlight-commands.css">
-    <script src="_support/html/highlightjs/highlight.pack.js"></script>
-    <script src="_support/html/js/highlight-commands.js"></script>
-
-    <!-- Bootstrap -->
-    <link href="_support/html/css/bootstrap.min.css" rel="stylesheet">
-    <link href="_support/html/css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="_support/html/css/square-braket-associates.css" rel="stylesheet">
-    <style>
-/*        .container { max-width: 55em; } */
-    </style>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
+    <title>Pharo Book</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+<link href="/Booklet-AReflectiveKernel-Old_support/html/css/font-awesome.min.css" rel="stylesheet">
+<link href="/Booklet-AReflectiveKernel-Old_support/html/css/nucleus.css" rel="stylesheet">
+<link href="/Booklet-AReflectiveKernel-Old_support/html/css/flex.css" rel="stylesheet">
+<link rel="stylesheet" href="/Booklet-AReflectiveKernel-Old_support/html/highlightjs/styles/default.css">
+<link rel="stylesheet" href="/Booklet-AReflectiveKernel-Old_support/html/css/highlight-commands.css">
+<link rel="stylesheet" href="/Booklet-AReflectiveKernel-Old_support/html/css/bootstrap.min.css">
+<script src="/Booklet-AReflectiveKernel-Old_support/html/js/jquery-2.x.min.js"></script>
+<script src="/Booklet-AReflectiveKernel-Old_support/html/highlightjs/highlight.pack.js"></script>
+<script src="/Booklet-AReflectiveKernel-Old_support/html/js/highlight-commands.js"></script>
+<meta name="description" content="">
+<meta name="author" content="Stéphane Ducasse">
   </head>
   <body>
+    <header>
+  <div class="logo">
+    <a class="baselink" href="/Booklet-AReflectiveKernel-Old">Pharo Book</a>
+  </div>
+  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
+  
+</header>
+<article>
+  <aside>
+    <ul class="menu">
+   		<li data-nav-id="123" class="dd-item">
+    		<a href="/Booklet-AReflectiveKernel-Old">
+		       <i class="fa fa-fw fa-home"></i>
+	    	</a>
+        </li>
 
-    <div class="container text-justify">
-      <section>
-        <h1>A simple reflective object kernel</h1>
-        <div class="attribution">Stéphane Ducasse</div>
+		
+		  <li class="dd-item  haschildren ">
+			<div>
+			  <a href="/Chapters/ObjVTheory/ObjVTheory.html#a class-based reflective minimal kernel">
+					A class-based reflective minimal kernel
+			  </a>
+			   <i class="fa fa-angle-right fa-lg category-icon"></i> 
+			</div>
+			  <ul class="dd-item">
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#objvlisp ">
+							ObjVlisp 
+						</a>
+						
+					</div>
 
-        <h2>A class-based reflective minimal kernel</h2>
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#objvlisp's six postulates">
+							ObjVLisp's six postulates
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#kernel overview">
+							Kernel overview
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#instances">
+							Instances
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#handling infinite recursion">Handling infinite recursion</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#understanding metaclasses ">
+							Understanding metaclasses 
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#instance structure ">
+							Instance structure 
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#about behavior">
+							About behavior
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#class as an object">
+							Class as an object
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#example: class point">Example: class Point</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#example: class class">Example: class Class</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#everything is an object">Everything is an object</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#sending a message ">
+							Sending a message 
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#method lookup">Method lookup</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#handling errors">Handling errors</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#remarks">Remarks</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#inheritance">
+							Inheritance
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#instance variable inheritance">Instance variable inheritance</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#method lookup">Method lookup</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#object: defining the minimal behavior of any object">
+							Object: defining the minimal behavior of any object
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#remark.">Remark.</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#inheritance and instantiation together">
+							Inheritance and instantiation together
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#refresh on self and super semantics">
+							Refresh on self and super semantics
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#object creation ">
+							Object creation 
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#creation of instances of the class point">
+							Creation of instances of the class Point
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#creation of the class point instance of class">
+							Creation of the class Point instance of Class
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#instance creation: role of the metaclass">Instance creation: Role of the metaclass</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#new = allocate and initialize">new = allocate and initialize</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#object allocation: the message allocate">Object allocation: the message allocate</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#object initialization">Object initialization</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#class initialization">Class initialization</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#the class class">
+							The Class class
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#defining a new metaclass">
+							Defining a new Metaclass
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#abstract">Abstract</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#about the 6th postulate ">
+							About the 6th postulate 
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#illustrating the problem">Illustrating the problem</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#the solution">The solution</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjVTheory/ObjVTheory.html#conclusion">
+							Conclusion
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjVTheory/ObjVTheory.html#further readings">Further readings</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+			  </ul>
+		  
+		  </li>
+		
+		  <li class="dd-item  haschildren ">
+			<div>
+			  <a href="/Chapters/ObjV/ObjV.html#building a minimal reflective class-based kernel">
+					Building a minimal reflective class-based kernel
+			  </a>
+			   <i class="fa fa-angle-right fa-lg category-icon"></i> 
+			</div>
+			  <ul class="dd-item">
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#objectives">
+							Objectives
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#preparation">
+							Preparation
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#getting pharo">Getting Pharo</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#getting infrastructure definitions">Getting infrastructure definitions</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#running tests">Running tests</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#naming conventions">
+							Naming conventions
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#inheriting from class array">
+							Inheriting from class Array
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#about representation choices">About representation choices</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#facilitating objclass class access">
+							Facilitating objclass class access
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#structure and primitives">
+							Structure and primitives
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job.">Your job.</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#structure of a class">
+							Structure of a class
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job.">Your job.</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#finding the class of an object">
+							Finding the class of an object
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job. ">Your job. </a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#accessing object instance variable values">
+							Accessing object instance variable values
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#a first simple method.">A first simple method.</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job. ">Your job. </a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#a second simple method.">A second simple method.</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job. ">Your job. </a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#object allocation and initialization">
+							Object allocation and initialization
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#instance allocation">Instance allocation</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job. ">Your job. </a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#keywords primitives">
+							Keywords primitives
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job. ">Your job. </a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#object initialization">
+							Object initialization
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job. ">Your job. </a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#static inheritance of instance variables">
+							Static inheritance of instance variables
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job.">Your job.</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#side remark ">Side remark </a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#method management">
+							Method management
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#defining a method and sending a message  ">Defining a method and sending a message  </a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job.">Your job.</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#message passing and dynamic lookup">
+							Message passing and dynamic lookup
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#method lookup">
+							Method lookup
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job.">Your job.</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#managing super">
+							Managing super
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#representing super">
+							Representing super
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job. ">Your job. </a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#handling not understood messages">
+							Handling not understood messages
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#bootstrapping the system">
+							Bootstrapping the system
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#manually creating objclass">
+							Manually creating ObjClass
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job. ">Your job. </a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job. ">Your job. </a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#remarks">Remarks</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#creation of objobject">
+							Creation of ObjObject
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job: objobjectstructure">Your job: objObjectStructure</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job: createobjobject">Your job: createObjObject</a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job: run the tests">Your job: run the tests</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#creation of objclass">
+							Creation of ObjClass
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job. ">Your job. </a>
+						</li>
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job. ">Your job. </a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#first user classes: objpoint">
+							First User Classes: ObjPoint
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#first user classes: objcoloredpoint">
+							First User Classes: ObjColoredPoint
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#your job. ">Your job. </a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#a first user metaclass: objabstract">
+							A First User Metaclass: ObjAbstract
+						</a>
+						
+					</div>
+
+					<ul class="dd-item">
+					
+					</ul>						
+				</li>
+				
+		   	  	<li class="dd-item  haschildren ">
+					<div>
+						<a href="/Chapters/ObjV/ObjV.html#new features that you could implement">
+							New features that you could implement
+						</a>
+						<i class="fa fa-angle-right fa-lg category-icon"></i>
+					</div>
+
+					<ul class="dd-item">
+							
+						<li class="dd-item">
+							<a href="/Chapters/ObjV/ObjV.html#shared variables">Shared Variables</a>
+						</li>
+					
+					</ul>						
+				</li>
+				
+			  </ul>
+		  
+		  </li>
+		
+		  <li class="dd-item ">
+			<div>
+			  <a href="/index.html#selected definitions">
+					Selected definitions
+			  </a>
+			  
+			</div>
+			  <ul class="dd-item">
+				
+			  </ul>
+		  
+		  </li>
+		
+    </ul>
+  </aside>
+
+  <section class="page">
+    
+	<h1>A simple reflective object kernel</h1>
+		
+	<h2>A class-based reflective minimal kernel</h2>
 
 <p>
 <em>&quot;The difference between classes and objects has been repeatedly emphasized. In the view presented here, these concepts belong to different worlds: the program text only contains classes; at run-time, only objects exist. This is not the only approach. One of the subcultures of object-oriented programming, influenced by Lisp and exemplified by Smalltalk, views classes as object themselves, which still have an existence at run-time.&quot;</em> B. Meyer Object-Oriented Software Construction
@@ -842,19 +1701,28 @@ We presented a really small kernel composed of two classes <code>Object</code> r
 The kernel presented in this chapter is a kernel with explicit metaclasses and as such it is not a panacea. Indeed it raised metaclass composition problems as explained in Bouraqadi et al. excellent article or  .
 
 </p>
-      </section>
+
+  </section>
+
+</article>
+
+<footer>
+
+<div class="footline">
+    <div class="github-link">
+      <a href="" target="blank"><i class="fa fa-code-fork"></i>Github</a>
     </div>
+  </div>
+</footer>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="_support/html/js/bootstrap.min.js"></script>
+<script src="/Booklet-AReflectiveKernel-Old_support/html/js/clipboard.min.js"></script>
 
-    <!-- Syntax highlighting of code blocks -->
-    <script>hljs.initHighlightingOnLoad();</script>
-
-    <!-- Prettify annotated paragraphs-->
-    <script src="_support/html/js/annotated-paragraphs.js"></script>
+<link href="/Booklet-AReflectiveKernel-Old_support/html/css/featherlight.min.css" rel="stylesheet">
+<script src="/Booklet-AReflectiveKernel-Old_support/html/js/featherlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="/Booklet-AReflectiveKernel-Old_support/html/js/flex.js"></script>
+<!-- Prettify annotated paragraphs-->
+    <script src="/Booklet-AReflectiveKernel-Old_support/html/js/annotated-paragraphs.js"></script>
 
   </body>
 </html>
